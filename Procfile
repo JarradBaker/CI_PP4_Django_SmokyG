@@ -1,0 +1,1 @@
+web: gunicorn smoky_g.wsgi
