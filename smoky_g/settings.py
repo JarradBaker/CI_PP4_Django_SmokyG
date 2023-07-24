@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-jarradbaker-cipp4django-9wsl0hd67sn.ws-eu102.gitpod.io',
-    'django-smokyg.herokuapp.com',
+    'django-smokyg-76764bee02de.herokuapp.com',
     'localhost'
 ]
 
