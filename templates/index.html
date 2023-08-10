@@ -2,58 +2,30 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
+    <section id="hero-section"></section>
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-            {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <!-- If the word placeholder is the image url it will show the below placeholder -->
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }} " alt="">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
+    <section id="welcome-section" class="grey-background">
+        <h1 class="white-font heading">Welcome to Smoky G</h1>
+        <p class="white-font">
+            We're a small Wye Valley based business that specializes in cold smoking food. Our products, including salt, pepper, cheese, cashews, and garlic, are all smoked to perfection for a delicious, smoky flavor. Try our smoked products today and taste the difference!
+        </p>
+    </section>
 
-                        </div>
-                    </div>
-                </div>
-            {% if forloop.counter|divisibleby:3 %}
+    <section id="product-highlights" class="grey-background">
+        <h1 class="white-font heading">Product Highlights!</h1>
+
+        <div class="img-container">
+            <div class="product-highlight-img ph1">
+
             </div>
-            <div class="row">
-            {% endif %}
-            {% endfor %}
+            <div class="product-highlight-img ph2">
+
+            </div>
+            <div class="product-highlight-img ph3">
+                
             </div>
         </div>
-    </div>
-    <!-- boilerplate pagination django code -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+        
+    </section> 
 
 {%endblock%}
