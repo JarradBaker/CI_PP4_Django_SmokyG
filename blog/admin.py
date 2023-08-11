@@ -1,10 +1,18 @@
 from django.contrib import admin
 # from .models import Post, Comment
-from .models import Category
+from .models import Category, Blog
 from django_summernote.admin import SummernoteModelAdmin
 
 
 # Register your models here.
+class BlogAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('title',)}
+    list_display = ('title', 'slug', 'status', 'created_on')
+    search_fields = ['id', 'title', 'body', 'category__category_name', 'status']
+    list_editable = ('status',)
+
+
+admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category)
 
 
