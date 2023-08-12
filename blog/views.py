@@ -1,15 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Blog
+from .models import Blog, Comment
 from .forms import CommentForm
 
 
 # Create your views here.
+def blog(request):
+    blogs = Blog.objects.filter(status="Published")
+    context = {
+        'blogs': blogs,
+    }
+    return render(request, 'blog.html', context)
+
+
 class BlogPost(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Blog.objects.filter(status="Published")
         blog = get_object_or_404(queryset, slug=slug)
-        comments = blog.comments.filter(approved=True).order_by(created_on)
+        comments = blog.comments.filter(approved=True) 
+        # .order_by(created_on)
         liked = False
         if blog.likes.filter(id=self.request.user.id).exists():
             liked = True

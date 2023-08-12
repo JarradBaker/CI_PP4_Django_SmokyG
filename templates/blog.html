@@ -10,7 +10,11 @@
                     <div class="tile-span">
                         <span class="white-font">{{ blog.title }}</span>
                     </div>
-                    <img class="tile-img" src="" alt="">
+                    {% if "placeholder" in blog.featured_image.url %}
+                    <img class="tile-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                    {% else %}
+                    <img class="tile-img" src=" {{ blog.featured_image.url }}" width="100%">
+                    {% endif %}
                     <div class="tile-span">
                         <span class="white-font">Author: {{ blog.author }}</span>
                     </div>

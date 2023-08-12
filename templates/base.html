@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">
+            <a href="{% url 'home'  %}">
                 <div class="logo"></div>
             </a>
             <!-- Nav Bar -->
@@ -31,8 +31,8 @@
                 
                 <!-- nav links for larger devices -->
                 <ul class="nav-links hide">
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a href="{% url 'home'  %}">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'blog'  %}">Blog</a></li>
                     <li class="nav-item"><a href="booking.html">Booking</a></li>
                     <li class="nav-item"><a href="login.html">Login</a></li>
                     <li class="nav-item"><a href="register.html">Register</a></li>
@@ -40,8 +40,8 @@
             </div>
         </nav>
         <ul class="nav-links-mobile hide">
-            <li class="nav-item"><a href="index.html">Home</a></li>
-            <li class="nav-item"><a href="blog.html">Blog</a></li>
+            <li class="nav-item"><a href="{% url 'home'  %}">Home</a></li>
+            <li class="nav-item"><a href="{% url 'blog'  %}">Blog</a></li>
             <li class="nav-item"><a href="booking.html">Booking</a></li>
             <li class="nav-item"><a href="login.html">Login</a></li>
             <li class="nav-item"><a href="register.html">Register</a></li>

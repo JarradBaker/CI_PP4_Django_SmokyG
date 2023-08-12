@@ -26,7 +26,8 @@ class Blog(models.Model):
 	title = models.CharField(max_length=200, unique=True)
 	slug = models.SlugField(max_length=200, unique=True, blank=True)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
-	author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+	author = models.ForeignKey(
+		User, on_delete=models.CASCADE, related_name="blog_posts")
 	created_on = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 	featured_image = CloudinaryField('image', default='placeholder')
@@ -47,10 +48,26 @@ class Blog(models.Model):
 		return self.likes.count()
 
 
+class Comment(models.Model):
+	blog = models.ForeignKey(
+		Blog, on_delete=models.CASCADE, related_name='comments')
+	name = models.CharField(max_length=80)
+	email = models.EmailField()
+	body = models.TextField()
+	created_on = models.DateTimeField(auto_now_add=True)
+	approved = models.BooleanField(default=False)
+
+	class Meta:
+		ordering = ['created_on']
+
+	def __str__(self):
+		return f"Comment {self.body} by {self.name}"
+
 # class Post(models.Model):
 # 	title = models.CharField(max_length=200, unique=True)
 # 	slug = models.SlugField(max_length=200, unique=True)
-# 	author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+# 	author = models.ForeignKey(
+# 		User, on_delete=models.CASCADE, related_name="blog_posts")
 # 	updated_on = models.DateTimeField(auto_now=True)
 # 	content = models.TextField()
 # 	featured_image = CloudinaryField('image', default='placeholder')
@@ -58,7 +75,8 @@ class Blog(models.Model):
 # 	created_on = models.DateTimeField(auto_now_add=True)
 # 	status = models.IntegerField(choices=STATUS, default=0)
 # 	likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-# 	dislikes = models.ManyToManyField(User, related_name='blog_dislikes', blank=True)
+# 	dislikes = models.ManyToManyField(
+# 		User, related_name='blog_dislikes', blank=True)
 
 # 	class Meta:
 # 		ordering = ['-created_on']
@@ -71,7 +89,8 @@ class Blog(models.Model):
 
 
 # class Comment(models.Model):
-# 	post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+# 	post = models.ForeignKey(
+# 		Post, on_delete=models.CASCADE, related_name='comments')
 # 	name = models.CharField(max_length=80)
 # 	email = models.EmailField()
 # 	body = models.TextField()

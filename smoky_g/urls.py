@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('blog/', views.blog, name='blog'),
+    path('blog/', include("blog.urls"), name='blog'),
     # path('summernote/', include('django_summernote.urls')),
     # path('', include('blog.urls'), name='blog_urls'),
     # path('accounts/', include('allauth.urls')),
