@@ -8,7 +8,7 @@
             <div class="blog-post-img-container">
                 <a href="{% url 'post_detail' blog.slug  %}">
                     <div class="tile-span">
-                        <span class="white-font">{{ blog.title }}</span>
+                        <span class="">{{ blog.title }}</span>
                     </div>
                     {% if "placeholder" in blog.featured_image.url %}
                     <img class="tile-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
@@ -16,7 +16,7 @@
                     <img class="tile-img" src=" {{ blog.featured_image.url }}" width="100%">
                     {% endif %}
                     <div class="tile-span">
-                        <span class="white-font">Author: {{ blog.author }}</span>
+                        <span class="">Author: {{ blog.author }}</span>
                     </div>
                 </a>
                 

@@ -213,6 +213,10 @@ p.white-font {
     text-align: center;
 }
 
+.blog-post-img-container a {
+    text-decoration: none;
+}
+
 img.tile-img {
     width: 100%;
     height: 250px;
@@ -226,7 +230,42 @@ img.tile-img {
     background-color: #000;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    color: #FFFF00;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'lobster two', cursive;
+    font-weight: bold;
 }
+
+.blog-header {
+    margin-left: auto;
+}
+
+.blog-header>img {
+    justify-self: center;
+    align-self: auto;
+    max-width: 650px;
+    margin: auto;
+}
+
+.blog-title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'lobster two', cursive;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.blog-subtitle,
+.post-content-text {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'lobster two', cursive;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
 
 
 /* ------------------------------- Booking */
