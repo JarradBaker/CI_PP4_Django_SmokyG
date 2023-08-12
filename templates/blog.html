@@ -6,13 +6,16 @@
         {% for blog in blogs %}
         <div class="blog-post-tile grey-background">
             <div class="blog-post-img-container">
-                <div class="tile-span">
-                    <span class="white-font">{{ blog.title }}</span>
-                </div>
-                <img class="tile-img" src="" alt="">
-                <div class="tile-span">
-                    <span class="white-font">Author: {{ blog.author }}</span>
-                </div>
+                <a href="{% url 'post_detail' blog.slug  %}">
+                    <div class="tile-span">
+                        <span class="white-font">{{ blog.title }}</span>
+                    </div>
+                    <img class="tile-img" src="" alt="">
+                    <div class="tile-span">
+                        <span class="white-font">Author: {{ blog.author }}</span>
+                    </div>
+                </a>
+                
             </div>
 
         </div>

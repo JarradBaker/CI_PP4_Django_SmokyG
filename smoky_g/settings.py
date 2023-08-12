@@ -33,6 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-jarradbaker-cipp4django-9wsl0hd67sn.ws-eu102.gitpod.io',
     '8000-jarradbaker-cipp4django-9wsl0hd67sn.ws-eu103.gitpod.io',
+    '8000-jarradbaker-cipp4django-5w3l7jitl0a.ws-eu103.gitpod.io',
     'django-smokyg-76764bee02de.herokuapp.com',
     'localhost'
 ]
@@ -68,7 +69,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

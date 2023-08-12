@@ -7,7 +7,7 @@ def home(request):
 
 
 def blog(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.filter(status="Published")
     context = {
         'blogs': blogs,
     }

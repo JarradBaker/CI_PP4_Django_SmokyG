@@ -37,8 +37,14 @@ class Blog(models.Model):
 	is_featured = models.BooleanField(default=False)
 	likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
+	class Meta:
+		ordering = ['-created_on']
+
 	def __str__(self):
 		return self.title
+
+	def number_of_likes(self):
+		return self.likes.count()
 
 
 # class Post(models.Model):
