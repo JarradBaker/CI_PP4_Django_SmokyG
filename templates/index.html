@@ -15,15 +15,14 @@
         <h1 class="white-font heading">Product Highlights!</h1>
 
         <div class="img-container">
-            <div class="product-highlight-img ph1">
-
-            </div>
-            <div class="product-highlight-img ph2">
-
-            </div>
-            <div class="product-highlight-img ph3">
-                
-            </div>
+            {% for product in products %}
+                <span class="white-font">{{ product.name }}</span>
+                {% if "placeholder" in product.featured_image.url %}
+                <img class="product-highlight-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                {% else %}
+                <img class="product-highlight-img" src=" {{ product.featured_image.url }}">
+                {% endif %}
+            {% endfor %}
         </div>
         
     </section> 

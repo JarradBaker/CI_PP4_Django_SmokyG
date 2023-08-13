@@ -31,7 +31,7 @@ class BlogPost(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                # "comment_form": CommentForm()
+                "comment_form": CommentForm()
             },
         )
 

@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from blog.models import Blog
+from blog.models import Blog, Product
 
 
 def home(request):
-    return render(request, 'index.html')
+    products = Product.objects.all()
+    context = {
+        'products': products,
+    }
+    return render(request, 'index.html', context)
 
 
 def blog(request):

@@ -1,6 +1,6 @@
 from django.contrib import admin
 # from .models import Post, Comment
-from .models import Category, Blog
+from .models import Category, Blog, Comment, Product
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -14,6 +14,8 @@ class BlogAdmin(admin.ModelAdmin):
 
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category)
+admin.site.register(Comment)
+admin.site.register(Product)
 
 
 # # Sets an admin view for the Post table

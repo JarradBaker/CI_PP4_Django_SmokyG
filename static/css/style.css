@@ -173,10 +173,17 @@ p.white-font {
     flex-direction: column;
 }
 
+.img-container span {
+    padding-top: 25px;
+    font-family: 'lobster two', cursive;
+    font-size: 32px;
+}
+
 .product-highlight-img {
     width: 320px;
     height: 320px;
-    margin: 15px 0;
+    margin: 5px 0;
+    background-size: cover;
 }
 
 .ph1 {
@@ -268,14 +275,57 @@ img.tile-img {
 
 
 
-/* ------------------------------- Booking */
-#booking {
-    min-height: 640px;
+/* ------------------------------- Forms */
+.form-container {
+    width: 100%;
+    height: 650px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container a {
+    color: #FFFF00;
+    text-decoration: none;
+}
+
+.form-container button {
+    min-width: 100px;
+    min-height: 50px;
+    font-family: 'lobster two', cursive;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: black;
+    color: #FFFF00;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.form-heading,
+.form-p,
+.login,
+.signup {
+    padding: 10px;
+    font-size: 2rem;
+    font-family: 'lobster two', cursive;
+    font-weight: bold;
+}
+
+.login,
+.signup,
+.logout {
+    padding-top: 25px;
 }
 
 
+
+
+
 /* ------------------------------- Booking */
-#contact {
+#booking {
     min-height: 640px;
 }
 

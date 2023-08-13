@@ -63,6 +63,15 @@ class Comment(models.Model):
 	def __str__(self):
 		return f"Comment {self.body} by {self.name}"
 
+
+class Product(models.Model):
+	name = models.CharField(max_length=80)
+	price = models.DecimalField(max_digits=6, decimal_places=2)
+	featured_image = CloudinaryField('image', default='placeholder')
+
+	def __str__(self):
+		return self.name
+
 # class Post(models.Model):
 # 	title = models.CharField(max_length=200, unique=True)
 # 	slug = models.SlugField(max_length=200, unique=True)
