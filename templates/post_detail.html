@@ -35,8 +35,8 @@
 
             <div class="blog-comments">
                 <h3>Comments:</h3>
+                {% for comment in comments %}
                 <div class="comment-body">
-                    {% for comment in comments %}
                     <p>
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.name }}
@@ -47,8 +47,33 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
-                <!-- Our for loop ends here -->
+                    {% if comment.name == user.username %}
+                    <div class="del-edit">
+                        <i class="fa-solid fa-trash"></i>
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    {% endif %}
+                    <!-- Our for loop ends here -->
+                </div>
                 {% endfor %}
+
+                <!-- New comment form -->
+                <div class="comment-form form-container grey-background">
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting approval
+                    </div>
+                    {% else %}
+                    {% if user.is_authenticated %}
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form class="" method="post">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-comment">Submit</button>
+                    </form>
+                    {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>

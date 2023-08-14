@@ -35,12 +35,12 @@ class BlogPost(View):
             },
         )
 
-    def blog(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         queryset = Blog.objects.filter(status="Published")
         blog = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by('created_on')
+        comments = blog.comments.filter(approved=True).order_by('created_on')
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        if blog.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         comment_form = CommentForm(data=request.POST)
@@ -49,7 +49,7 @@ class BlogPost(View):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post
+            comment.blog = blog
             comment.save()
         else:
             comment_form = CommentForm()
@@ -62,7 +62,7 @@ class BlogPost(View):
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": comment_form
             },
         )
 

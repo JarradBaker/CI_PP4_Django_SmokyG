@@ -273,6 +273,19 @@ img.tile-img {
     padding: 10px 5px;
 }
 
+.comment-body {
+    border: solid #FFF 2px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.del-edit {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 
 /* ------------------------------- Forms */
@@ -320,7 +333,13 @@ img.tile-img {
     padding-top: 25px;
 }
 
-
+.comment-form.form-container {
+    padding: 200px auto;
+    height: 400px;
+    font-family: 'lobster two', cursive;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
 
 
