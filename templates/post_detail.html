@@ -21,8 +21,25 @@
             <p class="post-content-text">
                 {{ blog.body | safe }}
             </p>
-            <!-- The number of likes goes before the closing strong tag -->
-            <strong class="comment-text"><i class="far fa-heart"></i> {{ blog.number_of_likes }} </strong>
+            <strong>
+                {% if user.is_authenticated %}
+                <form class="" action="{% url 'post_like' blog.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    {% else %}
+                    <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    {% endif %}
+                </form>
+                {% else %}
+                <span class="white-font"><i class="far fa-heart"></i></span>
+                {% endif %}
+                <span class="white-font">{{ blog.number_of_likes }}</span>
+            </strong>
             <div class="blog-comments-count">
                 {% with comments.count as total_comments %}
                 <strong class="comment-text"><i class="far fa-comments"></i>
@@ -49,8 +66,8 @@
                     {{ comment.body | linebreaks }}
                     {% if comment.name == user.username %}
                     <div class="del-edit">
-                        <i class="fa-solid fa-trash"></i>
-                        <i class="fa-solid fa-file-pen"></i>
+                        <i class="delete-comment fa-solid fa-trash"></i>
+                        <i class="edit-comment fa-solid fa-file-pen"></i>
                     </div>
                     {% endif %}
                     <!-- Our for loop ends here -->
