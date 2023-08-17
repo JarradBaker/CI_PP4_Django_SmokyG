@@ -118,6 +118,7 @@ The project structure is broken down in to two areas. There is the web pages are
 - Signup - the signup form for the site
 - Logout - the logout page for the site
 - Booking - the booking page where users can book calls.
+- My Bookings - the page where users can delete/amend bookings.
 
 ### Django Project
 - smoky_g - Main project directory
@@ -193,24 +194,109 @@ The following frameworks and tools were used to develop the website:
 - Elephant SQL
 
 ## Features
-The website contains 5 pages including the 404 page, and a total of 13 features
+The website contains a total of 12 features
 
 ### Header (logo and navigation)
 - Shows on every page
-- The nav links stack under the logo on smaller screens making it responsive
 - Enables easy and smooth navigation
-- The current page is highlighted in blue
-- User Stories: 8, 14
+- User Stories: 2, 17
 <details><summary>Header</Summary>
-<img src="docs/features/Header.png">  
+<img src="docs/features/header.png">  
 </details>
 
 ### Footer
 - Shows on every page like the header
 - Like the header, the social links also stack underneath the copyright text on smaller screens
-- User Stories: 2, 8, 14
+- User Stories: 2, 17
 <details><summary>Footer</Summary>
-<img src="docs/features/Footer.png">  
+<img src="docs/features/footer.png">  
+</details>
+
+### Home
+- The home page
+- Shows the hero image, and lists the products
+- User Stories: 1
+<details><summary>Home</Summary>
+<img src="docs/features/home.png">  
+</details>
+
+### Featured Products
+- Shows featured products on Home page
+- Pulls them from database
+- User Stories: 1
+<details><summary>Featured Products</Summary>
+<img src="docs/features/products.png">  
+</details>
+
+### Bookings
+- User Stories: 10
+<details><summary>Featured Products</Summary>
+<img src="docs/features/products.png">  
+</details>
+
+### My Bookings
+- User Stories: 11, 12
+<details><summary>Featured Products</Summary>
+<img src="docs/features/products.png">  
+</details>
+
+### Register/Signup
+- Allows users to register/signup
+- Enables commenting
+- User Stories: 4, 19
+<details><summary>Register/Signup</Summary>
+<img src="docs/features/register.png">  
+</details>
+
+### Login
+- Allows users to login
+- Enables commenting
+- User Stories: 5
+<details><summary>Login</Summary>
+<img src="docs/features/login.png">  
+</details>
+
+### Logout
+- Allows users to logout
+- User Stories: 6
+<details><summary>Logout</Summary>
+<img src="docs/features/logout.png">  
+</details>
+
+### Blog Page
+- Shows published blogs ordered by created date
+- User Stories: 3
+<details><summary>Blog Page</Summary>
+<img src="docs/features/blog.png">  
+</details>
+
+### Post Details
+- Shows the entire blog posts
+- User Stories: 3, 7, 8, 9
+<details><summary>Post Details</Summary>
+<img src="docs/features/postdetails.png">  
+</details>
+
+### Comments
+- Allows users to add/amend/delete comments
+- User Stories: 7, 8, 9
+<details><summary>Comments</Summary>
+<img src="docs/features/comments.png">  
+</details>
+
+### Admin Panel
+- Allows admins to moderate posts and content
+- Allows adding and removing of blog posts and products
+- User Stories: 13, 14, 15, 16, 17
+<details><summary>Admin</Summary>
+<img src="docs/features/admin.png">  
+</details>
+
+### 404 Page
+- Shows Custom 404 page
+- User Stories: 
+<details><summary>404</Summary>
+<img src="docs/features/404.png">  
 </details>
 
 
