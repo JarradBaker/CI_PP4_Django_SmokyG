@@ -37,83 +37,97 @@
 10. [Credits](#credits)
 11. [Acknowledgements](#acknowledgements)
 
+
+## About
+Smoky G is a website for a company by the same name. It sells smoked produce, and the website offers a range of features. It has blog posts, which enables users to read the information in the posts, as well as like the posts, and comment on them. It also offers a booking system, where users can book sessions with a representative to  run through a few of the products, and where you could use them in your day to day life.
+
+
 ## Project Goals
 
 ### User Goals
-- Find good quality skateboards
-- See examples of pricing for the products
-- Learn more about skateboarding
-- Find the location of the store
-- Learn what makes this company different
-- Learn how to use skateboards
+- Ability to read, comment on, and like blog posts.
+- Ability to amend/edit their comments.
+- Ability to delete their comments.
 
 ### Website Owner Goals
-- Reach the target audience
-- Increase the traffic and sales
-- Direct interaction with customers
-- Show what makes this company different
+- Provide more information about the company and products to the users through blog posts, bookings and images.
+- Allow users to engage and communicate about the products, and company through comments, likes and bookings.
+
 
 ## User Experience
 
 ### Target Audience
 The website is designed with the following target audience in mind:
-- Skateboarders looking to buy a new board
-- People looking to get in to skateboarding
-- Physical skating shops looking for stock
-- Skateboarders looking to learn new tricks
+- People interested in soked produce
+- Current and Potential customers
+- People that work in the food industry
 
 ### User Requirements and Expectations
-- Simplistic user interface
-- Smooth Navigation System
-- Easy to find relevant information
-- All social links direct to the correct website
-- Presentation of content is clear
-- Visually appealing design
-- Accessibility
-- Media and functions work as expected
+- Fully Responsive
+- Full Accessibility
+- Easy to Navigate
+- Social Media Links
+
 
 ### User Stories
 
 #### First Time User
-1. As a first time user, I want to understand the product
-2. As a first time user, I want to learn about the company
-3. As a first time user, I want to know how much the product costs
-4. As a first time user, I want to learn more about skateboarding
-5. As a first time user, I want to learn how to use the product
-6. As a first time user, I want to ask questions about my order
-7. As a first time user, I want to know why to choose this company
-8. As a first time user, I want to be able to navigate the site easily
+1. As a user, I want to be able to see the products
+2. As a user, I want to be able to  navigate the site easily through headers, footers and menus
+3. As a user, I want to be able to read blog posts
+4. As a user, I want to be able to create an account
+5. As a user, I want to be able to log in to the site
+6. As a user, I want to be able to comment on blog posts
+7. As a user, I want to be able to amend/edit my comments
+8. As a user, I want to be able to delete my comments
+9. As a user, I want to be able to create customer service bookings
+10. As a user, I want to be able to amend/edit customer service bookings
+11. As a user, I want to be able to delete customer service bookings
 
-#### Returning User
-9. As a returning user, I want to be able to contact the company
-10. As a returning user, I want to learn more tricks
-11. As a returning user, I want to learn where a physical store is
-12. As a returning user, I want to look at products
+#### Admin
+12. As an admin, I want to be able to login to the admin panel
+13. As an admin, I want to be able to see the tables from the admin panel
+14. As an admin, I want to be able to be able to approve/reject user's comments
+15. As an admin, I want to be able to add/remove products
+16. As an admin, I want to be able to add/remove blog posts
 
 #### Site Owner
-13. As a site owner, I want users to find out about our products
-14. As a site owner, I want users to have a good visual experience when using the website
-15. As a site owner, I want users to be able to see a 404 page if anything goes wrong
-16. As a site owner, I want to enrich our users' skateboarding experience
+17. As a site owner, I want to ensure the users have a seamless experience through sensible navigation and apps.
+18. As a site owner, I want to ensure all data entered is valid, to avoid potential errors.
+
 
 ## Design
 
 ### Design Choices
-The website was designed to give a "street" feel to the users, which is why a colder colour theme was used. The images of products and skateboarding were used to engage the users.
+The website was designed for the owner of the business, so they had a strong influence on colour themes and such. We then worked out the best way to use these colours to draw user attention, while still maintaining readability and accessibility.
 
 ### Colour
-Colour was a very important aspect for engaging with the audience, as anything too childish, or bright may put visitors off. For this reason, I chose to use a nice cold themed colour set for the website, providing a "street" feel. For accessibility reasons, the colours were tested on Webaim using their contrast checker, and the darkest and lightest colours got a contrast ratio of 12.78:1 meaning that they were a great fit.
-![Colours image](docs/Colours.png)
+The client wanted to use yellow/gold, black, white, and red as the main colours for the website. We sharpened these and added a grey also to provide a good contrast, without overpowering the fell of the site with too much black.
 
 ### Fonts
-The chosen font for the website was "Quicksand", with sans serif as a backup font. I originally also used "Lobster" for headings, but I found that "Quicksand" fitted in much better for my target audience and the feel of the site, so I used a higher weight for the headings to make it appear bolder.
+Fonts were another aspect worked through with the client. He opted for the lobster fonts, as he wanted a stylish looking font that was still readable.
 
 ### Structure
-To keep the user interface as beginner friendly, and simple as possible, I went for a classic looking nav bar style. It is a simple layout with the logo to the left on desktops, and above on mobile. The theme remains the same throughout all four pages:
-- Index page: Shows an image of a skateboarder and why you would choose the company. Also contains the history of the company.
-- Tricks page: Gives explanations of how to perform various tricks, enriching the users skateboarding experience. Also has a video for each trick.
-- Boards page: Allows the users to see the products that are available.
-- Contact page: Gives users a chance to communicate with the company, and also shows a real map displaying where the physical store is.
+The project structure is broken down in to two areas. There is the web pages area, and the django project area. The web pages area is broken down to the main pages, and views that the website has, and the django project area is broken down into the projewct directory, and app directories. The web pages are kept within the templates folder in the django project directory.
+
+### WebPages
+- Homepage - main homepage for the website. Shows products from Products table.
+- Blog - list of blog posts that users can click to read the full post.
+- Post Details - the html page that loads for each full post, showing the title, author, content, image and comments/likes.
+- Login - the login form for the site.
+- Signup - the signup form for the site
+- Logout - the logout page for the site
+- Booking - the booking page where users can book calls.
+
+### Django Project
+- smoky_g - Main project directory
+- blog - App directory
+
+### Database
+- The database is a PostgreSQL database. It is hosted on ElephantSQL.
+
+### Data Models:
+
 
 ### Wireframes
 <details><summary>index</Summary>
@@ -148,6 +162,11 @@ To keep the user interface as beginner friendly, and simple as possible, I went 
 <img src="docs/Validation/Performance/404.png">
 </details>
 
+
+### Agile Design
+ I used Agile Design within this project to help me plan out different sprints, and improve productivity, and efficiency. I did this by using Github's Projects, Boards, Milestones, and Issues to develop User Stories, and Epics, which were then planned out over various sprints. The use of Agile in this project proved much more successful than working on previous projects, as I found it much easier to focus on finishing the specific functionality that I was working on.
+
+
 ## Technologies Used
 
 ### Languages
@@ -168,6 +187,10 @@ The following frameworks and tools were used to develop the website:
 - Font Awesome
 - Balsamiq
 - Favicon.io
+- Chrome/Chrome dev tools
+- Am I Responsive
+- Cloudinary
+- Elephant SQL
 
 ## Features
 The website contains 5 pages including the 404 page, and a total of 13 features
