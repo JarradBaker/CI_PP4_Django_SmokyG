@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Blog, Comment
-from .forms import CommentForm
+from .models import Blog, Comment, Booking
+from .forms import CommentForm, BookingForm
 
 
 # Create your views here.
@@ -78,6 +78,72 @@ class PostLike(View):
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
+# test
+def delete_comment(request, slug, comment_id):
+    blog = get_object_or_404(Blog, slug=slug)
+    comment = get_object_or_404(Comment, id=comment_id, blog=blog)
+
+    if request.method == 'POST':
+        comment.delete()
+        # You can add a success message or any other logic here
+        return redirect('post_detail', slug=slug)  # Redirect to the post's detail view
+
+    return render(request, 'comment_confirm_delete.html', {'comment': comment})
+
+
+def edit_comment(request, slug, comment_id):
+    blog = get_object_or_404(Blog, slug=slug)
+    comment = get_object_or_404(Comment, id=comment_id, blog=blog)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST, instance=comment)
+        if comment_form.is_valid():
+            comment_form.save()
+            # You can add a success message or any other logic here
+            return redirect('post_detail', slug=slug)  # Redirect to the post's detail view
+    else:
+        comment_form = CommentForm(instance=comment)
+
+    return render(request, 'edit_comment.html', {'comment_form': comment_form, 'comment': comment})
+
+
+def create_booking(request):
+    if request.method == 'POST':
+        booking_form = BookingForm(request.POST)
+        if booking_form.is_valid():
+            booking = booking_form.save(commit=False)
+            booking.user = request.user
+            booking.save()
+            return redirect('bookings')
+    else:
+        booking_form = BookingForm()
+    return render(request, 'create_booking.html', {'booking_form': booking_form})
+
+
+def booking_list(request):
+    bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'booking_list.html', {'bookings': bookings})
+
+
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    if request.method == 'POST':
+        booking_form = BookingForm(request.POST, instance=booking)
+        if booking_form.is_valid():
+            booking_form.save()
+            return redirect('bookings')
+    else:
+        booking_form = BookingForm(instance=booking)
+    return render(request, 'edit_booking.html', {'booking_form': booking_form, 'booking': booking})
+
+
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('bookings')
+    return render(request, 'delete_booking.html', {'booking': booking})
 
 # def show_post(request, slug, )
 

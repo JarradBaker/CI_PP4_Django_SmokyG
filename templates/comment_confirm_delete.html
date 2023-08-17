@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container grey-background">
+    <h3 class="form-heading white-font">Confirm Deletion</h3>
+    <p class="form-p white-font">Are you sure you want to delete the comment "{{ comment.body }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container grey-background">
+    <h3 class="form-heading white-font">Confirm Deletion</h3>
+    <h3 class="white-font form-heading">Are you sure you want to delete the booking for {{ booking.date }} {{ booking.start_time }} - {{ booking.end_time }}?</h3>
+    <form class="login white-font" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
+{% endblock %}

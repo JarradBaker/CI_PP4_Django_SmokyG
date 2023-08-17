@@ -66,8 +66,12 @@
                     {{ comment.body | linebreaks }}
                     {% if comment.name == user.username %}
                     <div class="del-edit">
-                        <i class="delete-comment fa-solid fa-trash"></i>
-                        <i class="edit-comment fa-solid fa-file-pen"></i>
+                        <a href="{% url 'delete_comment' blog.slug comment.id %}">
+                            <i class="delete-comment fa-solid fa-trash"></i>
+                        </a>
+                        <a href="{% url 'edit_comment' blog.slug comment.id %}">
+                            <i class="edit-comment fa-solid fa-file-pen"></i>
+                        </a>
                     </div>
                     {% endif %}
                     <!-- Our for loop ends here -->

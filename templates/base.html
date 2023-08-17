@@ -35,8 +35,9 @@
                 <ul class="nav-links hide">
                     <li class="nav-item"><a href="{% url 'home'  %}">Home</a></li>
                     <li class="nav-item"><a href="{% url 'blog'  %}">Blog</a></li>
-                    <li class="nav-item"><a href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a href="{% url 'create_booking' %}">Booking</a></li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="{% url 'bookings' %}">My Bookings</a></li>
                     <li class="nav-item"><a href="{% url 'account_logout' %}">Logout</a></li>
                     {% else %}
                     <li class="nav-item"><a href="{% url 'account_login' %}">Login</a></li>
@@ -48,8 +49,9 @@
         <ul class="nav-links-mobile hide">
             <li class="nav-item"><a href="{% url 'home'  %}">Home</a></li>
             <li class="nav-item"><a href="{% url 'blog'  %}">Blog</a></li>
-            <li class="nav-item"><a href="booking.html">Booking</a></li>
+            <li class="nav-item"><a href="{% url 'create_booking' %}">Booking</a></li>
             {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'bookings' %}">My Bookings</a></li>
             <li class="nav-item"><a href="{% url 'account_logout' %}">Logout</a></li>
             {% else %}
             <li class="nav-item"><a href="{% url 'account_login' %}">Login</a></li>
@@ -57,6 +59,15 @@
             {% endif %}
         </ul>
     </header>
+
+    <div class="django-messages">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+        </div>
+        {% endfor %}
+    </div>
 
     {% block content %}
 

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.exists('env.py'):
     import env
 
@@ -34,6 +35,7 @@ ALLOWED_HOSTS = [
     '8000-jarradbaker-cipp4django-9wsl0hd67sn.ws-eu102.gitpod.io',
     '8000-jarradbaker-cipp4django-9wsl0hd67sn.ws-eu103.gitpod.io',
     '8000-jarradbaker-cipp4django-5w3l7jitl0a.ws-eu103.gitpod.io',
+    '8000-jarradbaker-cipp4django-5w3l7jitl0a.ws-eu104.gitpod.io',
     'django-smokyg-76764bee02de.herokuapp.com',
     'localhost'
 ]
@@ -65,6 +67,14 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="form-container grey-background">
+    <h4 class="white-font form-p">
+        Here you can book a 1 hour slot for a planned meeting with a representative. This can be to introduce you to products, or even enquire about ordering
+    </h4>
+
+    <h3 class="form-heading white-font">Create Booking</h3>
+    <form class="login white-font" method="post">
+        {% csrf_token %}
+        {{ booking_form|crispy }}
+        <button type="submit">Create Booking</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="form-container grey-background">
+    <h3 class="form-heading white-font">Edit Booking</h3>
+    <form class="login white-font" method="post">
+        {% csrf_token %}
+        {{ booking_form|crispy }}
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+{% endblock %}
