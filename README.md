@@ -1,9 +1,9 @@
-# Skate Shack
+# Smoky G
 (Developer: Jarrad Baker)
 
 ![Mockup image](docs/responsive.png)
 
-[Live webpage](https://jarradbaker.github.io/CI_PP1_SkateShack/)
+[Live webpage](https://django-smokyg-76764bee02de.herokuapp.com/)
 
 ## Table Of Contents
 
@@ -306,121 +306,25 @@ The website contains a total of 12 features
 
 The Nu HTML Checker (W3C) is used to validate HTML documents. This ensures that all unintended mistakes are spotted before release, so that they can be corrected. All of my pages passed the check without any errors, including the 404 page.
 
-<details><summary>index</Summary>
-<img src="docs/Validation/Performance/index.png">
-</details>
 
-<details><summary>blog</Summary>
-<img src="docs/Validation/Performance/tricks.png">
-</details>
-
-<details><summary>post_detail</Summary>
-<img src="docs/Validation/Performance/boards.png">
-</details>
-
-<details><summary>bookings</Summary>
-<img src="docs/Validation/Performance/contact.png">
-</details>
-
-<details><summary>my_booking</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>login</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>register</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>logout</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
 
 ### CSS Validation
 
 The W3C Jigsaw CSS Validation Service is used in exactly the same way as the Nu HTML Validator, but for CSS. I ran both my actual style.css file, and an actual web page through it, and both passed without any errors.
 
-<details><summary>Web Page</Summary>
-<img src="docs/Validation/CSS/CSS.png">
-</details>
 
-<details><summary>Stylesheet</Summary>
-<img src="docs/Validation/CSS/stylesheet.png">
-</details>
 
 ### Accessibility
 
 The WAVE web accessibility evaluation tool by WebAIM was used to ensure the webpages met accessibility standards. All 5 pages passed without any errors.
 
-<details><summary>index</Summary>
-<img src="docs/Validation/Performance/index.png">
-</details>
 
-<details><summary>blog</Summary>
-<img src="docs/Validation/Performance/tricks.png">
-</details>
-
-<details><summary>post_detail</Summary>
-<img src="docs/Validation/Performance/boards.png">
-</details>
-
-<details><summary>bookings</Summary>
-<img src="docs/Validation/Performance/contact.png">
-</details>
-
-<details><summary>my_booking</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>login</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>register</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>logout</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
 
 ### Performance
 
 The Google Lighthouse tool, within the Google Chrome Developer Tools was used to ensure that each page met a high performance rating. This shows that the website will load efficiently over various devices.
 
-<details><summary>index</Summary>
-<img src="docs/Validation/Performance/index.png">
-</details>
 
-<details><summary>blog</Summary>
-<img src="docs/Validation/Performance/tricks.png">
-</details>
-
-<details><summary>post_detail</Summary>
-<img src="docs/Validation/Performance/boards.png">
-</details>
-
-<details><summary>bookings</Summary>
-<img src="docs/Validation/Performance/contact.png">
-</details>
-
-<details><summary>my_booking</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>login</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>register</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
-
-<details><summary>logout</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
 
 ### Performance tests on various devices
 
@@ -442,35 +346,6 @@ The website was tested on several web browsers to ensure consistency. The browse
 - Opera GX
 
 ### Testing User Stories
-
-1. As a first time user, I want to understand the product
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Tricks | Navigate to the Tricks page and find any Trick | See the tricks | Works as expected |
-| Trick Videos | Navigate to the Tricks page and find any Trick Video | See the trick videos | Works as expected |
-| Why Choose Us? | Navigate to the Home page and scoll down | See the Why Choose Us? section | Works as expected |
-| Boards | Navigate to the Boards page | See the page containing all the products | Works as expected |
-| Products | Navigate to the Boards page, and scroll down | See all of the products available | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Tricks</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksTest.png">
-  </details>
-  <details><summary>Tricks Videos</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksVideosTest.png">
-  </details>
-  <details><summary>Why Choose Us?</Summary>
-    <img src="docs/Validation/UserStoryTests/WhyChooseUsTestStep1.png">
-    <img src="docs/Validation/UserStoryTests/WhyChooseUsTestStep2.png">
-  </details>
-  <details><summary>Boards</Summary>
-    <img src="docs/Validation/UserStoryTests/BoardsTest.png">
-  </details>
-  <details><summary>Products</Summary>
-    <img src="docs/Validation/UserStoryTests/ProductsTest.png">
-  </details>
-</details>
 
 
 ## Bugs
