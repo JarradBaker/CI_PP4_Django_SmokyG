@@ -3,7 +3,7 @@
 
 ![Mockup image](docs/responsive.png)
 
-[Live webpage](https://jarradbaker.github.io/CI_PP1_SkateShack/)
+[Live webpage](https://django-smokyg-76764bee02de.herokuapp.com/)
 
 ## Table Of Contents
 
