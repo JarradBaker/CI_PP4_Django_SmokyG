@@ -18,8 +18,7 @@ class BlogPost(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Blog.objects.filter(status="Published")
         blog = get_object_or_404(queryset, slug=slug)
-        comments = blog.comments.filter(approved=True) 
-        # .order_by(created_on)
+        comments = blog.comments.filter(approved=True).order_by(created_on)
         liked = False
         if blog.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -79,7 +78,6 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-# test
 def delete_comment(request, slug, comment_id):
     blog = get_object_or_404(Blog, slug=slug)
     comment = get_object_or_404(Comment, id=comment_id, blog=blog)

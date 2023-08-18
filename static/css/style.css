@@ -139,7 +139,7 @@ nav a {
     text-align: center;
 }
 
-#msg.alert.alert-success .hide {
+.django-messages.hide {
     display: none;
 }
 
